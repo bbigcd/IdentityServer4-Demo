@@ -4,7 +4,7 @@ using IdentityModel;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
 
-namespace QuickstartIdentityServer {
+namespace ServerApiMerge {
     public class Config {
         public static IEnumerable<IdentityResource> GetIdentityResources () {
             return new IdentityResource[] {
@@ -15,7 +15,7 @@ namespace QuickstartIdentityServer {
         public static IEnumerable<ApiResource> GetApis () {
             return new List<ApiResource> {
                 // new ApiResource ("api1", "My API")
-                new ApiResource ("api1", "My API", new List<string> { JwtClaimTypes.Role, "Username", "level"})
+                new ApiResource ("api1", "My API", new List<string> { JwtClaimTypes.Role, "Username", "level" })
             };
         }
 
@@ -43,7 +43,7 @@ namespace QuickstartIdentityServer {
                             }
             };
         }
-        
+
         // 用户数据
         public static List<TestUser> GetUsers () {
             return new List<TestUser> () {

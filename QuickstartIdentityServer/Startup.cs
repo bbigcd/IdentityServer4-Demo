@@ -20,7 +20,9 @@ namespace QuickstartIdentityServer
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddInMemoryClients(Config.GetClients())
-                .AddTestUsers(Config.GetUsers());//添加测试用户
+                .AddTestUsers(Config.GetUsers())//添加测试用户
+		        .AddProfileService<CustomProfileService>()
+		        .AddResourceOwnerValidator<CustomResourceOwnerPasswordValidator>();
 
             builder.AddDeveloperSigningCredential();
         }
